@@ -1,0 +1,45 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: $font-h1;
+}
+
+h2 {
+  font-size: $font-h2;
+
+  @include mobileScreen {
+    font-size: $font-h3;
+    line-height: 40px;
+  }
+}
+
+h3 {
+  font-size: $font-h3;
+  line-height: 40px;
+  font-weight: 500;
+
+  @include mobileScreen {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+h4 {
+  font-size: $font-h4;
+}
+
+
+.text {
+  &--primary {
+    color: $primary  !important;
+  }
+}

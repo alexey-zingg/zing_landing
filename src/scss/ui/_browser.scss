@@ -1,0 +1,59 @@
+.browser {
+  margin: 0 auto;
+  width: 960px;
+  border-radius: 16px;
+  box-shadow: 0px 25px 30px rgba(20, 84, 153, 0.1);
+  position: relative;
+
+  &:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  &__header {
+    position: relative;
+    background: $dark;
+    padding: 16px;
+    border-radius: 16px 16px 0 0;
+
+    .header__title {
+      display: block;
+      position: absolute;
+      width: 60px;
+      height: 12px;
+      top: 50%;
+      left: 50%;
+      margin-top: -6px;
+      margin-left: -30px;
+    }
+
+    .header__dots {
+      display: block;
+      width: 44px;
+      height: 12px;
+    }
+  }
+
+  &__body {
+    background: rgba(white, 0.5);
+    backdrop-filter: blur(24px);
+    border-radius: 0px 0px 16px 16px;
+    padding: 16px;
+  }
+
+  .z-header {
+    padding: 8px 24px;
+    border-radius: 16px;
+    background: $white;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}

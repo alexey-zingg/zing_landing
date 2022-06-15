@@ -1,0 +1,32 @@
+// Variables
+$primary: #035CE9 !default;
+$secondary: $indigo-500  !default;
+$success: $green-500  !default;
+$info: $bluegrey-200  !default;
+$warning: $yellow-500  !default;
+$danger: $pink-500  !default;
+$light: $bluegrey-100  !default;
+$dark: $indigo-900  !default;
+$muted: $indigo-400  !default;
+$border-color: $bluegrey-200  !default;
+
+// Media Query & Drid 
+$columns: 12 !default;
+$gutter: 32px !default;
+
+$tablet: 756px !default;
+$medium: 1000px !default;
+$large: 1440px !default;
+
+
+$roboto: 'Roboto',
+  sans-serif !default;
+
+
+$font-h1: 64px !default;
+$font-h2: 40px !default;
+$font-h3: 32px !default;
+$font-h4: 14px !default;
+$font-sm: 14px !default;
+$font-sm: 14px !default;
+$font-base: 16px !default;

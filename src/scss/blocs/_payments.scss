@@ -1,0 +1,129 @@
+#payments {
+  padding-bottom: 32px;
+
+  h2 {
+    text-align: center;
+  }
+
+  .payments {
+    &__nav {
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+
+        li {
+          flex: 1;
+
+          a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            border-bottom: 1px solid $border-color;
+            color: $muted;
+            padding: 16px;
+            font-size: 16px;
+            lhh: 20px;
+            font-weight: 400;
+            transition: .15s ease-in-out;
+
+            &:hover {
+              font-weight: 500;
+              color: $dark;
+              border-color: $primary;
+            }
+          }
+        }
+      }
+
+      @include mobileScreen {
+        display: none;
+      }
+    }
+
+    &__list {
+      .payment {
+        padding: 16px;
+        background: $bluegrey-100;
+        border-radius: 16px;
+        margin-bottom: 16px;
+
+        @include mobileScreen {
+          .btn {
+            width: 100%;
+          }
+        }
+
+
+        ul,
+        h3 {
+          margin: 0 0 32px;
+        }
+
+        p {
+          margin: 0 0 12px;
+        }
+
+        ul {
+          padding-left: 1rem;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+        }
+
+        .row {
+          align-items: center;
+        }
+
+        .art {
+          padding-top: 16px;
+
+          img {
+            display: block;
+            width: 100%;
+          }
+        }
+
+        .content {
+          padding: 32px;
+        }
+
+        @include mediumScreenUp {
+          padding: 64px;
+          background: $white;
+          margin-bottom: 0;
+
+          .art {
+            padding: 32px;
+          }
+
+          &:nth-child(odd) .row {
+            flex-direction: row-reverse;
+          }
+
+          .art img {
+
+            &#payment_1,
+            &#payment_3 {
+              transform: translateX(200px);
+              opacity: 0;
+            }
+
+            &#payment_2,
+            &#payment_4 {
+              transform: translateX(-200px);
+              opacity: 0;
+            }
+
+            &.inview {
+              transition: 1s ease-in-out;
+              opacity: 1 !important;
+              transform: translateX(0) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

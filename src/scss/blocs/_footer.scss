@@ -1,0 +1,25 @@
+.footer {
+  text-align: center;
+  padding: 50px 0;
+
+  &__brand {
+    display: block;
+    margin: 0 auto 16px;
+    width: 80px;
+
+    img {
+      display: block;
+    }
+  }
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: $muted;
+  }
+
+  @include mobileScreen {
+    padding: 32px;
+  }
+}

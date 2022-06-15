@@ -1,0 +1,77 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  white-space: nowrap;
+  text-decoration: none;
+  border: none;
+  color: $primary;
+  background: $white;
+  font-size: $font-base;
+  font-weight: 500;
+  line-height: 24px;
+  vertical-align: middle;
+  border-radius: 56px;
+  transition: .15s linear;
+  user-select: none;
+
+  span {
+    display: block;
+    padding: 0 16px;
+  }
+
+  i {
+    display: block;
+    width: 24px;
+    height: 24px;
+    line-height: 1;
+    font-size: 24px;
+    transition: .15s linear;
+  }
+
+
+  &:hover {
+    background: $secondary;
+    color: $white;
+    //box-shadow: 0 3px 7px rgba($primary, .15);
+
+    i {
+      transform: scale(1.15);
+    }
+  }
+
+  &.cta {
+    color: $white;
+    background: $primary;
+
+    &:hover {
+      background: lighten($primary, 10%);
+    }
+  }
+
+  &.light {
+    color: $primary;
+    background: $blue-50;
+
+    &:hover {
+      background: $blue-100;
+    }
+  }
+
+  &.sm {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 12px;
+
+    span {
+      padding: 0 12px;
+    }
+
+    i {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

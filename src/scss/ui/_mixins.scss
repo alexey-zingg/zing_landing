@@ -1,0 +1,55 @@
+// mobileScreen
+@mixin mobileScreen {
+  @media only screen and (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+// TabletScreen
+@mixin tabletScreen {
+  @media only screen and (min-width: #{$tablet + 1}) and (max-width: #{$medium}) {
+    @content;
+  }
+}
+
+@mixin tabletScreenUp {
+  @media only screen and (min-width: #{$tablet + 1}) {
+    @content;
+  }
+}
+
+@mixin tabletScreenDown {
+  @media only screen and (max-width: #{$medium}) {
+    @content;
+  }
+}
+
+// MediumScreen
+@mixin mediumScreen {
+  @media only screen and (min-width: #{$medium + 1}) and (max-width: #{$large}) {
+    @content;
+  }
+}
+
+@mixin mediumScreenUp {
+  @media only screen and (min-width: #{$medium + 1}) {
+    @content;
+  }
+}
+
+@mixin mediumScreenDown {
+  @media only screen and (max-width: #{$large}) {
+    @content;
+  }
+}
+
+// LargeScreen
+@mixin largeScreen {
+  @media only screen and (min-width: #{$large + 1}) {
+    @content;
+  }
+}
+
+@function colWidth($num) {
+  @return $num / $columns * 100%;
+}

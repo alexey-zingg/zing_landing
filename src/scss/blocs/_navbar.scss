@@ -1,0 +1,135 @@
+.navbar {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba($white, .75);
+  backdrop-filter: blur(32px);
+  box-shadow: 0 1px 3px rgba($black, .15);
+  z-index: 10;
+  font-size: $font-sm;
+  line-height: 20px;
+
+  .ctn {
+    display: flex;
+    align-items: center;
+  }
+
+  &__sep {
+    flex: 1;
+  }
+
+  &__toggler {
+    display: none;
+  }
+
+  &__brand {
+    padding: 16px;
+    margin-left: -16px;
+
+    img {
+      display: block;
+      height: 20px;
+    }
+  }
+
+
+  .nav {
+    display: flex;
+    align-items: center;
+    margin: 0 -16px;
+    padding: 0;
+    list-style: none;
+
+    &__link {
+      display: block;
+      padding: 16px;
+      text-decoration: none;
+      position: relative;
+      color: $secondary;
+
+      span,
+      i {
+        display: inline-block;
+        line-height: 1;
+        vertical-align: middle;
+      }
+
+      i {
+        margin-left: 0.25em;
+        font-size: 20px;
+      }
+
+      &:hover,
+      &.active {
+        color: $primary;
+      }
+
+      &.active {
+        margin-right: -16px;
+      }
+
+      &.active:hover {
+        color: $blue-400;
+      }
+    }
+  }
+
+  @include mobileScreen {
+    background: $white;
+
+    &__toggler {
+      display: block;
+      padding: 16px;
+      margin-left: -16px;
+
+      i {
+        display: block;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        font-size: 20px;
+        line-height: 1;
+      }
+    }
+
+    &__nav {
+      position: absolute;
+      background: $white;
+      box-shadow: 0 3px 7px rgba($black, .25);
+      left: 0;
+      right: 0;
+      padding: 8px 0;
+      border-radius: 0 0 16px 16px;
+      top: 100%;
+      opacity: 0;
+      transform-origin: top;
+      transform: scaleY(0) translateY(-16px);
+      transition: .15s linear;
+
+      &.show {
+        transform: scaleY(1) translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .nav {
+      display: block;
+      margin: 0;
+      text-align: center;
+
+      &__item {
+        border-top: 1px solid $border-color;
+
+        &:first-child {
+          border-top: 0;
+        }
+      }
+
+      &__link {
+        font-size: $font-base;
+      }
+    }
+  }
+}

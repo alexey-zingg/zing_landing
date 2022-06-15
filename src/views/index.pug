@@ -1,0 +1,322 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Billing.GG :: Hello!
+
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap")
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css")
+    link(rel="stylesheet", href="assets/styles/style.css")
+  body 
+    nav.navbar
+      .ctn
+        .navbar__toggler(type='button'): i.ri-menu-line
+        a.navbar__brand(href='#'): img(src="assets/images/billing_logo.svg", alt="")
+        .navbar__sep
+        .navbar__nav
+          ul.nav
+            li.nav__item: a.nav__link(href='#') Payments
+            li.nav__item: a.nav__link(href='#') Pricing
+            li.nav__item: a.nav__link(href='#') Integration
+            li.nav__item: a.nav__link(href='#') About
+        a.nav__link.active(href='#') 
+          span Get Started
+          i.ri-arrow-right-circle-fill
+
+    section.section#wellcome  
+      .ctn
+        h1 Accept Payments Effortlessly <br>and 
+          span.text--primary Boost Your Business
+        p Zing.gg is an online payment platform for accepting cards <br>and other payment methods through all your sales channels. 
+        .actions
+          a.btn.cta(href="") 
+            span Start Now
+            i.ri-arrow-right-line
+          a.btn(href="") 
+            span Let's Talk
+            i.ri-chat-3-line
+        .iphone 
+          .iphone__body
+            .iphone__btn
+            .iphone__screen
+              img(src="assets/images/iphone_cam.svg", alt="").iphone__cam
+              .iphone__topline: img(src="assets/images/iphone_topline.svg", alt="")
+              .iphone__content
+                #step_1 
+                  img(src="assets/images/m_navbar.svg", alt="").z-header
+                  .z-panel
+                    .z-panel__header Checkout
+                    .z-panel__body
+                      .z-toggler 
+                        .txt 3DS Verified
+                        .inp
+                      .z-inp.holder
+                        .lbl Card Holder
+                        .val
+                          span H
+                          span a
+                          span r
+                          span o
+                          span l
+                          span d
+                          span &nbsp;&nbsp;
+                          span Q
+                          span u
+                          span i
+                          span n
+                          span n
+                      .z-inp.card
+                        .lbl Card Number
+                        .val
+                          span 4
+                          span 4
+                          span 4
+                          span 1
+                          span  &nbsp;&nbsp;
+                          span 1
+                          span 1
+                          span 1
+                          span 3
+                          span &nbsp;&nbsp;
+                          span 4
+                          span 7
+                          span 6
+                          span 1
+                          span  &nbsp;&nbsp;
+                          span 9
+                          span 9
+                          span 3
+                          span 1
+                        img(src="assets/images/visa.svg", alt="").z-inp__img
+                      .z-inp.valid
+                        .lbl MM/YY
+                        .val
+                          span 0
+                          span 3
+                          span /
+                          span 2
+                          span 2
+                      .z-inp.cvv
+                        .lbl CVV
+                        .val
+                          span *&nbsp;
+                          span *&nbsp;
+                          span *&nbsp;
+                        img(src="assets/images/cvv.svg", alt="").z-inp__img
+                      .z-btn: div Pay Now
+                #step_2
+                  img(src="assets/images/spiner.svg", alt="").spin
+                  img(src="assets/images/success.svg", alt="").done
+
+
+        .browser 
+          .browser__header 
+            img.header__title(src="assets/images/browser_title.svg", alt="")
+            img.header__dots(src="assets/images/browser_dots.svg", alt="")
+          .browser__body
+            .z-header 
+              img(src="assets/images/z_navbar.svg", alt="")
+            .z-body
+              -for(i=0;i<10;i++)
+                img(src="assets/images/orders/order-"+i+".svg", alt="").order-line
+      .features: .ctn 
+        .row 
+          .col.sm-6.md-3: .feature 
+            .icon: i.ri-donut-chart-fill
+            .text Advanced Reports
+          .col.sm-6.md-3: .feature 
+            .icon: i.ri-mail-send-line
+            .text Email Notifications
+          .col.sm-6.md-3: .feature 
+            .icon: i.ri-money-dollar-circle-line
+            .text Multi-Currency
+          .col.sm-6.md-3: .feature 
+            .icon: i.ri-chat-smile-2-line
+            .text 24/7 Support
+
+    section.section#payments
+      .ctn
+        .row.justify-center: .col.lg-10
+          h2 Multiple Payment Types
+          .payments__nav: ul 
+            li: a(href="#payment_1") Subscription
+            li: a(href="#payment_2") Instalment
+            li: a(href="#payment_3") Metered
+            li: a(href="#payment_4") Single
+          .payments__list 
+            .payment
+              .row 
+                .art.col.md-7: img(src="assets/images/payments/payments-subscription.svg", alt="")#payment_1
+                .content.col.md-5 
+                  h3 Subscription
+                  p Recurring, fixed amount charged at regular interval until cancelled
+                  ul
+                    li Schedule Management
+                    li Card Update
+                    li Recurring Interval
+                    li Email Notifications
+                  a.btn.light.sm(href="") 
+                    span Learn More
+                    i.ri-arrow-right-circle-line
+
+            .payment
+              .row 
+                .art.col.md-7: img(src="assets/images/payments/payments-instalment.svg", alt="")#payment_2
+                .content.col.md-5
+                  h3 Instalment
+                  p Purchase price split across several instalments
+                  ul
+                    li Schedule Management
+                    li Card Update
+                    li Split balance
+                    li Collecting Deposit
+                    li Recurring Interval
+                    li Email Notifications
+                  a.btn.light.sm(href="") 
+                    span Learn More
+                    i.ri-arrow-right-circle-line
+
+            .payment 
+              .row 
+                .art.col.md-7: img(src="assets/images/payments/payments-metered.svg", alt="")#payment_3
+                .content.col.md-5
+                  h3 Metered
+                  p Metered, variable amount charged at regular or irregular interval
+                  ul
+                    li Create Scheduled Payment
+                    li Submit Payment
+                    li Schedule Management
+                    li Card Update
+                    li Email Notifications
+                  a.btn.light.sm(href="") 
+                    span Learn More
+                    i.ri-arrow-right-circle-line
+
+            .payment
+              .row 
+                .art.col.md-7: img(src="assets/images/payments/payments-single.svg", alt="")#payment_4
+                .content.col.md-5
+                  h3 Single
+                  p Full purchase price paid in a single payment event
+                  ul
+                    li Save Card
+                    li Email Notifications
+                    li Submit Payment
+                  a.btn.light.sm(href="") 
+                    span Learn More
+                    i.ri-arrow-right-circle-line
+
+    section.section#advantages
+      .ctn
+        h2 Spend Less Time and Money <br>on Your Payments
+        .row.justify-center: .col.lg-10
+          .advantage  
+            .row.align-center 
+              .art.col.md-6: img(src="assets/images/advantages/adv_1.svg", alt="")#advantage_1
+              .content.col.md-6
+                h3 Advanced Reports
+                p Unified reporting environment for a clear picture of your transactions and settlements
+          .advantage  
+            .row.align-center 
+              .art.col.md-6: img(src="assets/images/advantages/adv_2.svg", alt="")#advantage_2
+              .content.col.md-6
+                h3 Expert Support
+                p Dedicated team that understands your business needs and is eager to assist you
+          .advantage  
+            .row.align-center 
+              .art.col.md-6: img(src="assets/images/advantages/adv_3.svg", alt="")#advantage_3
+              .content.col.md-6
+                h3 Business Toolkit
+                p Powerful and flexible tools developed to help you grow your business
+
+    section.section#hallmarks
+      .ctn
+        .row.justify-center: .col.md-10
+          .hallmark.dark: .row 
+            .col.md-6: .text
+              h2 Recurring Payments
+              p Optimize your billing strategy with one-click, recurring subscriptions and metered billing
+            .col.md-6 image
+          .row
+            .col.md-6: .hallmark.vertical.purple
+              .text
+                h2 Billing Manager
+                p Create and manage ongoing subscriptions and instalments with z-terminal module
+              .art: img(src="assets/images/hallmarks/hallmark_2.svg", alt="")
+            .col.md-6: .hallmark.vertical
+              .text
+                h2 Fraud Prevention
+                p PCI DSS and 3DS 2.0 ready solution reduces PCI scope and keeps you safe and secure
+              .art: img(src="assets/images/hallmarks/hallmark_3.svg", alt="")
+          .hallmark.dark: .row 
+            .col.md-6: .text
+              h2 Virtual Terminal
+              p A Virtual Terminal is the easy way for your call centre operatives to enter a payment
+            .col.md-6 image
+          .row
+            .col.md-6: .hallmark.vertical
+              .text
+                h2 Hosted Checkout
+                p Flexible and secure hosted payment page, easy to integrate and style how you like
+              .art: img(src="assets/images/hallmarks/hallmark_5.svg", alt="")
+            .col.md-6: .hallmark.vertical.green
+              .text
+                h2 Single Integration
+                p Connect to multiple acquirers and all the payment methods you need with a single integration
+              .art: img(src="assets/images/hallmarks/hallmark_6.svg", alt="")
+
+    section.section#cms 
+      .tiles__bg
+        -for(i=1;i<=52;i++)
+          if(i===10)
+            .tile: img(src="assets/images/prestashop.svg", alt="")
+          else if(i===11)
+            .tile: img(src="assets/images/drupal.svg", alt="")
+          else if(i===15)
+            .tile: img(src="assets/images/magento.svg", alt="")
+          else if(i===28)
+            .tile: img(src="assets/images/bigcartel.svg", alt="")
+          else if(i===42)
+            .tile: img(src="assets/images/woocommerce.svg", alt="")
+          else if(i===34)
+            .tile: img(src="assets/images/opencart.svg", alt="")
+          else
+            .tile
+      .ctn
+        .row.justify-center: .col.md-5.lg-4
+          .panel
+            h2 Connect in More Ways
+            p Using a webshop system like Shopify, Magento, or WooCommerce?
+            p Then you’re already connected! Just activate the gateway in your control panel or install a preconfigured plugin to connect immediately.
+            a.btn.cta(href="") 
+              span Start Now
+              i.ri-arrow-right-line
+
+    section.section#support
+      .ctn: .support 
+        .row 
+          .col.lg-6: .support__text
+            h2 Looking for a Payment Provider you can talk to?
+            p Zing.gg offers robust payment acceptance solutions perfectly blended with our live human service, support and expertise layer. The resulting experience is likely to be unfamiliarly bold and intense yet delightfully refreshing.
+            p Zing.gg delivers expertly managed and fully supported payment solutions from application through integration and activation onwards, with no extra cost.
+            .actions
+              a.btn.cta(href="") 
+                span Start Now
+                i.ri-arrow-right-line
+              a.btn(href="") 
+                span Let's Talk
+                i.ri-chat-3-line
+          .col.lg-6: .support__animation
+            ul 
+              -for(i=1;i<=6;i++)
+                li: img(src="assets/images/support/text_"+i+".svg", alt="")
+
+    footer.footer 
+      .ctn 
+        a.footer__brand(href='#'): img(src="assets/images/billing_logo.svg", alt="")
+        p © Zing.gg Limited, Company 11797117. Registered in England & Wales.
+        p Services offered iunder agreement with CLiQSmart Limited, Company 115795.
+
+    script(src="assets/js/app.min.js") 
