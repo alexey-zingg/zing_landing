@@ -25,6 +25,10 @@ function isInViewport(el) {
     { passive: true }
   );
 
+  window.addEventListener("resize", function () {
+    if (isInViewport(wellcome)) startAnimateWellcome();
+  });
+
   function startAnimateWellcome() {
     const iphone = wellcome.querySelector(".iphone");
     const browser = wellcome.querySelector(".browser");
@@ -115,6 +119,18 @@ function isInViewport(el) {
       { passive: true }
     );
   }
+  window.addEventListener(
+    "resize",
+    function () {
+      if (window.matchMedia("(min-width: 757px)").matches) {
+        isInViewport(p1) ? p1.classList.add("inview") : p1.classList.remove("inview");
+        isInViewport(p2) ? p2.classList.add("inview") : p2.classList.remove("inview");
+        isInViewport(p3) ? p3.classList.add("inview") : p3.classList.remove("inview");
+        isInViewport(p4) ? p4.classList.add("inview") : p4.classList.remove("inview");
+      }
+    },
+    { passive: true }
+  );
 
   // nav
   const links = document.querySelectorAll(".payments__nav ul li a");
@@ -156,6 +172,107 @@ function isInViewport(el) {
       },
       { passive: true }
     );
+  }
+  window.addEventListener(
+    "resize",
+    function () {
+      if (window.matchMedia("(min-width: 757px)").matches) {
+        isInViewport(p1) ? p1.classList.add("inview") : p1.classList.remove("inview");
+        isInViewport(p2) ? p2.classList.add("inview") : p2.classList.remove("inview");
+        isInViewport(p3) ? p3.classList.add("inview") : p3.classList.remove("inview");
+
+        document.addEventListener("scroll", function () {
+          isInViewport(p1) ? p1.classList.add("inview") : p1.classList.remove("inview");
+          isInViewport(p2) ? p2.classList.add("inview") : p2.classList.remove("inview");
+          isInViewport(p3) ? p3.classList.add("inview") : p3.classList.remove("inview");
+        });
+      }
+    },
+    { passive: true }
+  );
+})();
+
+// HALLMARKS SCREEN
+(function () {
+  const recurring = document.querySelector("#recurring");
+  const recurringOrders = recurring.querySelectorAll(".order-line");
+  let recurringStarted = false;
+
+  if (isInViewport(recurring)) startAnimateRecurring();
+
+  document.addEventListener(
+    "scroll",
+    function () {
+      if (isInViewport(recurring)) startAnimateRecurring();
+    },
+    { passive: true }
+  );
+  window.addEventListener("resize", function () {
+    if (isInViewport(recurring)) startAnimateRecurring();
+  });
+
+  function startAnimateRecurring() {
+    const mobile = window.matchMedia("(max-width: 756px)").matches;
+    if (!recurringStarted && !mobile) {
+      recurringStarted = true;
+      recurring.classList.add("inview");
+      setTimeout(() => {
+        recurringOrders[0].src = "assets/images/recurring/order_1_ch.svg";
+        setTimeout(() => {
+          recurring.querySelector(".z-drop").classList.add("exec");
+          setTimeout(() => {
+            recurring.querySelectorAll(".z-btn")[4].classList.add("click");
+            setTimeout(() => {
+              recurring.querySelector(".z-drop").classList.remove("exec");
+              setTimeout(() => {
+                recurringOrders[0].src = "assets/images/recurring/order_1_ex.svg";
+                setTimeout(() => {
+                  recurringOrders[1].src = "assets/images/recurring/order_2_ch.svg";
+                  setTimeout(() => {
+                    recurringOrders[2].src = "assets/images/recurring/order_3_ch.svg";
+                    setTimeout(() => {
+                      recurring.querySelector(".z-drop").classList.add("merge");
+                      setTimeout(() => {
+                        recurring.querySelectorAll(".z-btn")[2].classList.add("click");
+                        setTimeout(() => {
+                          recurring.querySelector(".z-drop").classList.remove("merge");
+                          recurringOrders[1].classList.add("hide");
+                          recurringOrders[2].classList.add("hide");
+                          setTimeout(() => {
+                            recurring.querySelector(".order-mr").classList.add("on");
+                            setTimeout(() => {
+                              stopAnimateRecurring();
+
+                              setTimeout(() => {
+                                startAnimateRecurring();
+                              }, 1000);
+                            }, 3000);
+                          }, 1000);
+                        }, 1500);
+                      }, 1000);
+                    }, 1000);
+                  }, 1000);
+                }, 1000);
+              }, 1000);
+            }, 1500);
+          }, 1000);
+        }, 1000);
+      }, 1500);
+    }
+  }
+
+  function stopAnimateRecurring() {
+    const mobile = window.matchMedia("(max-width: 756px)").matches;
+    if (recurringStarted && !mobile) {
+      recurringStarted = false;
+      //recurring.classList.remove("inview");
+      recurringOrders[1].classList.remove("hide");
+      recurringOrders[2].classList.remove("hide");
+      recurring.querySelector(".order-mr").classList.remove("on");
+      recurringOrders[0].src = "assets/images/recurring/order_1.svg";
+      recurringOrders[1].src = "assets/images/recurring/order_2.svg";
+      recurringOrders[2].src = "assets/images/recurring/order_3.svg";
+    }
   }
 })();
 

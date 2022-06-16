@@ -234,11 +234,35 @@ html(lang="en")
     section.section#hallmarks
       .ctn
         .row.justify-center: .col.md-10
-          .hallmark.dark: .row 
-            .col.md-6: .text
-              h2 Recurring Payments
-              p Optimize your billing strategy with one-click, recurring subscriptions and metered billing
-            .col.md-6 image
+          .hallmark.recurring: .row 
+            .col.md-6
+              .text
+                h2 Recurring Payments
+                p Optimize your billing strategy with one-click, recurring subscriptions and metered billing
+              .art: img(src="assets/images/hallmarks/hallmark_1.svg", alt="")
+            .col.md-6
+              .browser#recurring
+                .browser__header 
+                  img.header__title(src="assets/images/browser_title.svg", alt="")
+                  img.header__dots(src="assets/images/browser_dots.svg", alt="")
+                .browser__body
+                  .z-header 
+                    img(src="assets/images/z_navbar.svg", alt="")
+                  .z-body
+                    img(src="assets/images/recurring/order_1.svg", alt="").order-line
+                    img(src="assets/images/recurring/order_mr.svg", alt="").order-mr
+                    img(src="assets/images/recurring/order_2.svg", alt="").order-line
+                    img(src="assets/images/recurring/order_3.svg", alt="").order-line
+                    img(src="assets/images/recurring/order_4.svg", alt="").order-line
+                    img(src="assets/images/recurring/order_5.svg", alt="").order-line
+                    img(src="assets/images/recurring/order_6.svg", alt="").order-line
+                    img(src="assets/images/recurring/order_7.svg", alt="").order-line
+                    ul.z-drop
+                      li.z-btn Skip
+                      li.z-btn Reschedule
+                      li.z-btn Merge
+                      li.z-btn Retry
+                      li.z-btn Execute Now
           .row
             .col.md-6: .hallmark.vertical.purple
               .text

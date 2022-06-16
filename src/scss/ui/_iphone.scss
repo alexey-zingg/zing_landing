@@ -327,23 +327,23 @@
         }
       }
     }
+  }
+}
 
-    .z-btn {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      color: $white;
-      height: 44px;
-      font-size: 14px;
-      font-weight: 500;
-      border-radius: 6px;
-      background: $blue-500;
-      //transition: .25s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+.z-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: $white;
+  height: 44px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  background: $blue-500;
+  //transition: .25s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 
-      &.click {
-        animation: click .25s .25s linear;
-      }
-    }
+  &.click {
+    animation: click .25s .25s linear;
   }
 }
 

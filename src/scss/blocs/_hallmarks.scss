@@ -76,5 +76,163 @@
         }
       }
     }
+
+    &.recurring {
+      min-height: 0;
+      background: $blue-50;
+
+      .row {
+        align-items: center;
+      }
+
+      .browser {
+        margin-bottom: 140px;
+        transform: scale(0);
+        opacity: 0;
+        height: 450px;
+        margin: 0;
+        transition: .5s ease-in-out;
+        background: #f8fafc;
+
+        &__body {
+          background: #f8fafc;
+        }
+
+        .order-line {
+          margin-top: 4px;
+          display: block;
+          width: 100%;
+          height: 41px;
+          overscroll-behavior: hidden;
+
+          &.hide {
+            transition: .5s ease-in-out;
+            opacity: 0;
+            margin: 0 0 -41px;
+          }
+        }
+
+        .order-mr {
+          opacity: 0;
+          transition: .5s ease-in-out;
+          opacity: 0;
+          margin: 0 0 -41px;
+          height: 41px;
+          display: block;
+          width: 100%;
+
+          &.on {
+            opacity: 1;
+            margin: 4px 0 0;
+          }
+        }
+
+        &.inview {
+          transform: scale(1);
+          opacity: 1;
+        }
+
+        .z-drop {
+          position: absolute;
+          width: 140px;
+          left: 60px;
+          z-index: 2;
+          margin: 0;
+          padding: 8px;
+          border-radius: 8px;
+          background: $white;
+          box-shadow: 4px 4px 0px rgba(20, 84, 153, 0.05);
+          visibility: hidden;
+
+          border: 1px solid rgba(20, 84, 153, 0.05);
+
+          .z-btn {
+            height: 36px;
+            margin-bottom: 4px;
+            font-weight: 400;
+            font-size: 12px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+
+          &.exec {
+            top: 67px;
+            visibility: visible;
+            transition: visibility .25s linear;
+
+            .z-btn {
+
+              &:nth-child(1),
+              &:nth-child(2) {
+                color: $blue-500;
+                background: $info;
+              }
+
+              &:nth-child(3),
+              &:nth-child(4) {
+                color: $gray-700;
+                background: $gray-200;
+              }
+            }
+          }
+
+          &.merge {
+            top: 108px;
+            visibility: visible;
+            transition: visibility .25s linear;
+
+            .z-btn {
+
+              &:nth-child(1),
+              &:nth-child(2),
+              &:nth-child(5) {
+                color: $blue-500;
+                background: $info;
+              }
+
+              &:nth-child(4) {
+                color: $gray-700;
+                background: $gray-200;
+              }
+            }
+          }
+        }
+      }
+
+      .art {
+        display: none;
+      }
+
+      @include mobileScreen {
+        .row {
+          margin: 0;
+        }
+
+        .col {
+          padding: 0;
+        }
+
+        .text {
+          padding: 32px 16px 0;
+        }
+
+        .art {
+          display: block;
+          margin-right: -16px;
+          padding-bottom: 16px;
+
+          img {
+            display: block;
+            width: 100%;
+          }
+        }
+
+        .col:nth-child(2) {
+          display: none;
+        }
+      }
+    }
   }
 }
