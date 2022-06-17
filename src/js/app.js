@@ -195,25 +195,35 @@ function isInViewport(el) {
 // HALLMARKS SCREEN
 (function () {
   const recurring = document.querySelector("#recurring");
+  const virtual = document.querySelector("#virtual");
   const recurringOrders = recurring.querySelectorAll(".order-line");
   let recurringStarted = false;
 
-  if (isInViewport(recurring)) startAnimateRecurring();
+  if (window.matchMedia("(min-width: 757px)").matches) {
+    if (isInViewport(recurring)) startAnimateRecurring();
+    isInViewport(virtual) ? virtual.classList.add("inview") : virtual.classList.remove("inview");
+  }
 
   document.addEventListener(
     "scroll",
     function () {
-      if (isInViewport(recurring)) startAnimateRecurring();
+      if (window.matchMedia("(min-width: 757px)").matches) {
+        if (isInViewport(recurring)) startAnimateRecurring();
+        isInViewport(virtual) ? virtual.classList.add("inview") : virtual.classList.remove("inview");
+      }
     },
     { passive: true }
   );
+
   window.addEventListener("resize", function () {
-    if (isInViewport(recurring)) startAnimateRecurring();
+    if (window.matchMedia("(min-width: 757px)").matches) {
+      if (isInViewport(recurring)) startAnimateRecurring();
+      isInViewport(virtual) ? virtual.classList.add("inview") : virtual.classList.remove("inview");
+    }
   });
 
   function startAnimateRecurring() {
-    const mobile = window.matchMedia("(max-width: 756px)").matches;
-    if (!recurringStarted && !mobile) {
+    if (!recurringStarted) {
       recurringStarted = true;
       recurring.classList.add("inview");
       setTimeout(() => {
@@ -258,8 +268,7 @@ function isInViewport(el) {
   }
 
   function stopAnimateRecurring() {
-    const mobile = window.matchMedia("(max-width: 756px)").matches;
-    if (recurringStarted && !mobile) {
+    if (recurringStarted) {
       recurringStarted = false;
       //recurring.classList.remove("inview");
       recurringOrders[1].classList.remove("hide");

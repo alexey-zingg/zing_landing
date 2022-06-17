@@ -77,9 +77,11 @@
       }
     }
 
-    &.recurring {
+    &.recurring,
+    &.virtual {
       min-height: 0;
       background: $blue-50;
+      overflow: hidden;
 
       .row {
         align-items: center;
@@ -93,6 +95,7 @@
         margin: 0;
         transition: .5s ease-in-out;
         background: #f8fafc;
+        overflow: hidden;
 
         &__body {
           background: #f8fafc;
@@ -204,7 +207,56 @@
         display: none;
       }
 
+      .animation {
+        position: relative;
+        height: 450px;
+
+        img {
+          position: absolute;
+          opacity: 0;
+
+          &.step_1 {
+            top: 500%;
+            left: 0;
+            z-index: 1;
+          }
+
+          &.step_2 {
+            top: 750%;
+            left: -30px;
+            z-index: 2;
+          }
+
+          &.step_3 {
+            top: 25%;
+            left: 650%;
+            z-index: 3;
+          }
+        }
+
+        &.inview img {
+          opacity: 1;
+          transition: 1s ease-in-out;
+
+          &.step_1 {
+            top: 15%;
+          }
+
+          &.step_2 {
+            top: 75%;
+            transition-delay: .5s;
+          }
+
+          &.step_3 {
+            left: 55%;
+            transition-delay: 1.5s;
+          }
+        }
+      }
+
       @include mobileScreen {
+        padding: 0;
+
         .row {
           margin: 0;
         }
@@ -219,8 +271,7 @@
 
         .art {
           display: block;
-          margin-right: -16px;
-          padding-bottom: 16px;
+          width: 100%;
 
           img {
             display: block;
