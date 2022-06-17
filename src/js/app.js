@@ -223,6 +223,7 @@ function isInViewport(el) {
           setTimeout(() => {
             recurring.querySelectorAll(".z-btn")[4].classList.add("click");
             setTimeout(() => {
+              recurring.querySelectorAll(".z-btn")[4].classList.remove("click");
               recurring.querySelector(".z-drop").classList.remove("exec");
               setTimeout(() => {
                 recurringOrders[0].src = "assets/images/recurring/order_1_ex.svg";
@@ -235,6 +236,7 @@ function isInViewport(el) {
                       setTimeout(() => {
                         recurring.querySelectorAll(".z-btn")[2].classList.add("click");
                         setTimeout(() => {
+                          recurring.querySelectorAll(".z-btn")[2].classList.remove("click");
                           recurring.querySelector(".z-drop").classList.remove("merge");
                           recurringOrders[1].classList.add("hide");
                           recurringOrders[2].classList.add("hide");
@@ -247,15 +249,15 @@ function isInViewport(el) {
                                 startAnimateRecurring();
                               }, 1000);
                             }, 3000);
-                          }, 1000);
-                        }, 1500);
-                      }, 1000);
+                          }, 50);
+                        }, 1000);
+                      }, 500);
                     }, 1000);
                   }, 1000);
                 }, 1000);
               }, 1000);
-            }, 1500);
-          }, 1000);
+            }, 1000);
+          }, 500);
         }, 1000);
       }, 1500);
     }
