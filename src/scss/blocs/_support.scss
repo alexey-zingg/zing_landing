@@ -13,6 +13,10 @@
     &__text {
       padding-right: 120px;
 
+      @include mediumScreenDown {
+        padding-right: 32px;
+      }
+
 
       .actions {
 
@@ -95,6 +99,10 @@
           transition-delay: 5s;
         }
       }
+    }
+
+    @include mediumScreenDown {
+      padding: 70px;
     }
 
     @include mobileScreen {
