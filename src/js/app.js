@@ -218,47 +218,41 @@ function isInViewport(el) {
       recurring.classList.add("inview");
       setTimeout(() => {
         recurringOrders[0].src = "assets/images/recurring/order_1_ch.svg";
+        recurring.querySelector(".z-drop").classList.add("exec");
         setTimeout(() => {
-          recurring.querySelector(".z-drop").classList.add("exec");
+          recurring.querySelectorAll(".z-btn")[0].classList.add("click");
           setTimeout(() => {
-            recurring.querySelectorAll(".z-btn")[4].classList.add("click");
+            recurring.querySelectorAll(".z-btn")[0].classList.remove("click");
+            recurring.querySelector(".z-drop").classList.remove("exec");
+            recurringOrders[0].src = "assets/images/recurring/order_1_ex.svg";
             setTimeout(() => {
-              recurring.querySelectorAll(".z-btn")[4].classList.remove("click");
-              recurring.querySelector(".z-drop").classList.remove("exec");
+              recurringOrders[1].src = "assets/images/recurring/order_2_ch.svg";
               setTimeout(() => {
-                recurringOrders[0].src = "assets/images/recurring/order_1_ex.svg";
+                recurringOrders[2].src = "assets/images/recurring/order_3_ch.svg";
+                recurring.querySelector(".z-drop").classList.add("merge");
                 setTimeout(() => {
-                  recurringOrders[1].src = "assets/images/recurring/order_2_ch.svg";
+                  recurring.querySelectorAll(".z-btn")[1].classList.add("click");
                   setTimeout(() => {
-                    recurringOrders[2].src = "assets/images/recurring/order_3_ch.svg";
+                    recurring.querySelectorAll(".z-btn")[1].classList.remove("click");
+                    recurring.querySelector(".z-drop").classList.remove("merge");
+                    recurringOrders[1].classList.add("hide");
+                    recurringOrders[2].classList.add("hide");
                     setTimeout(() => {
-                      recurring.querySelector(".z-drop").classList.add("merge");
+                      recurring.querySelector(".order-mr").classList.add("on");
                       setTimeout(() => {
-                        recurring.querySelectorAll(".z-btn")[2].classList.add("click");
-                        setTimeout(() => {
-                          recurring.querySelectorAll(".z-btn")[2].classList.remove("click");
-                          recurring.querySelector(".z-drop").classList.remove("merge");
-                          recurringOrders[1].classList.add("hide");
-                          recurringOrders[2].classList.add("hide");
-                          setTimeout(() => {
-                            recurring.querySelector(".order-mr").classList.add("on");
-                            setTimeout(() => {
-                              stopAnimateRecurring();
+                        stopAnimateRecurring();
 
-                              setTimeout(() => {
-                                startAnimateRecurring();
-                              }, 1000);
-                            }, 3000);
-                          }, 50);
+                        setTimeout(() => {
+                          startAnimateRecurring();
                         }, 1000);
-                      }, 500);
-                    }, 1000);
+                      }, 2000);
+                    }, 50);
                   }, 1000);
                 }, 1000);
-              }, 1000);
+              }, 250);
             }, 1000);
-          }, 500);
-        }, 1000);
+          }, 1000);
+        }, 500);
       }, 1500);
     }
   }
